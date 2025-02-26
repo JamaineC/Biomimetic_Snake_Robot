@@ -1,0 +1,123 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/trees/protos/Tree.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/trees/protos/BigSassafras.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/trees/protos/Oak.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/UnevenTerrain.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.14540903847976547 -0.2411506251003485 -0.9595324838389273 5.161069974747418
+  position -10.870269252257586 -24.955447167638365 5.266110671100522
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 25 25
+}
+UnevenTerrain {
+  translation 0 0 -2.84
+}
+BigSassafras {
+  translation 2.4 -5.6 0
+}
+BigSassafras {
+  translation -7.5 6.7 0
+  name "sassafras tree(1)"
+}
+Tree {
+  translation 10 0 0
+}
+Tree {
+  translation -10 0 0
+  name "tree(1)"
+}
+Tree {
+  translation 0 10 0
+  name "tree(2)"
+}
+Tree {
+  translation 0 -10 0
+  name "tree(3)"
+}
+Tree {
+  translation -6 -4 0
+  name "tree(2)"
+}
+Tree {
+  translation 4 -4 0
+  name "tree(2)"
+}
+Tree {
+  translation -4 4 0
+  name "tree(2)"
+}
+Tree {
+  translation 9 -4 0
+  name "tree(2)"
+}
+Tree {
+  translation -7 5 0
+  name "tree(2)"
+}
+Tree {
+  translation -3.4 6.3 0
+  name "tree(2)"
+}
+Tree {
+  translation -2 1 0
+  name "tree(2)"
+}
+Tree {
+  translation 2 1.6 0
+  name "tree(2)"
+}
+Tree {
+  translation 4 6 0
+  name "tree(2)"
+}
+Oak {
+  translation 2.4 0 0
+}
+Oak {
+  translation -3.7 2.4 0
+  name "oak tree(1)"
+}
+Oak {
+  translation 4.2 -4.5 0
+  name "oak tree(2)"
+}
+Oak {
+  translation 6.2 8.5 0
+  name "oak tree(3)"
+}
+Oak {
+  translation 3.5 1.8 0
+  name "oak tree(4)"
+}
+Oak {
+  translation 9.2 -4.5 0
+  name "oak tree(5)"
+}
+Oak {
+  translation 9.2 -4.5 0
+  name "oak tree(6)"
+}
+Oak {
+  translation 9.2 -4.5 0
+  name "oak tree(7)"
+}
+Oak {
+  translation 9.2 -4.5 0
+  name "oak tree(8)"
+}
+Oak {
+  translation 9.2 -4.5 0
+  name "oak tree(9)"
+}

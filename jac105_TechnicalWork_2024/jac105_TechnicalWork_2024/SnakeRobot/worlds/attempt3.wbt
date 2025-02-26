@@ -1,0 +1,444 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.22060243517431252 -0.23172364045773844 0.9474379768872345 4.879999650592034
+  position -6.80712420163553 12.393144778448205 4.805195673570017
+}
+RectangleArena {
+  translation -1.81 4.32 -0.08
+  floorSize 10 10
+}
+Robot {
+  translation 0.23353078337876298 0.33375114573112746 -0.04660567089174729
+  rotation 0.0756339932404181 -0.039102123626087185 0.9963686682119419 1.7270469445117993
+  children [
+    Solid {
+      translation -0.39 2.78 -0.04
+      children [
+        Lidar {
+          translation 0 -0.07 0.03
+          rotation 0 0 1 -1.5707953071795862
+          children [
+            DEF lidar Shape {
+              appearance PBRAppearance {
+                baseColor 0 0 0
+                metalness 0
+              }
+              geometry Box {
+                size 0.05 0.05 0.05
+              }
+            }
+          ]
+          boundingObject USE lidar
+          physics Physics {
+          }
+        }
+        DistanceSensor {
+          translation -1.01962e-08 -0.09 0
+          rotation 0 0 1 -1.5707953071795862
+          children [
+            DEF sensor Shape {
+              appearance PBRAppearance {
+              }
+              geometry Box {
+                size 0.0125 0.0125 0.0125
+              }
+            }
+          ]
+          name "frontSensor"
+          boundingObject USE sensor
+          physics Physics {
+          }
+          lookupTable [
+            0 0 0
+            0.1 20000 0
+          ]
+        }
+        DistanceSensor {
+          translation 0.0443916 -0.0970709 0
+          rotation 0 0 -1 0.7854003061004253
+          children [
+            DEF sensor Shape {
+              appearance PBRAppearance {
+                baseColor 0 0 0
+              }
+              geometry Box {
+                size 0.0125 0.0125 0.0125
+              }
+            }
+          ]
+          name "frontLeftSensor"
+          boundingObject USE sensor
+          physics Physics {
+          }
+          lookupTable [
+            0 0 0
+            0.1 20000 0
+          ]
+        }
+        DistanceSensor {
+          translation -0.0420711 -0.0964128 0
+          rotation 0 0 1 -2.094399693899575
+          children [
+            DEF sensor Shape {
+              appearance PBRAppearance {
+                baseColor 0 0 0
+              }
+              geometry Box {
+                size 0.0125 0.0125 0.0125
+              }
+            }
+          ]
+          name "frontRightSensor"
+          boundingObject USE sensor
+          physics Physics {
+          }
+          lookupTable [
+            0 0 0
+            0.1 20000 0
+          ]
+        }
+        Hinge2Joint {
+          jointParameters HingeJointParameters {
+            position -0.04075225488784846
+            anchor 0 0.125 0
+          }
+          jointParameters2 JointParameters {
+            position -0.2623923904245953
+          }
+          device [
+            RotationalMotor {
+              name "link1"
+            }
+          ]
+          device2 [
+            RotationalMotor {
+              name "link12"
+            }
+          ]
+          endPoint Solid {
+            translation -0.0034474626901879798 0.08930988900124476 0.000601044704975471
+            rotation -0.08646405160840606 -0.032220002335809655 -0.9957338194662965 0.34592131163659656
+            children [
+              Solid {
+                translation 0 0.1 0
+                children [
+                  DistanceSensor {
+                    translation -0.05 -2.06647e-15 0
+                    rotation 0 0 1 3.14159
+                    children [
+                      USE sensor
+                    ]
+                    name "body1RightSensor"
+                    boundingObject USE sensor
+                    physics Physics {
+                    }
+                  }
+                  DistanceSensor {
+                    translation 0.05 0 0
+                    children [
+                      USE sensor
+                    ]
+                    name "body1LeftSensor"
+                    boundingObject USE sensor
+                    physics Physics {
+                    }
+                  }
+                  Hinge2Joint {
+                    jointParameters HingeJointParameters {
+                      position 0.010411721261881267
+                    }
+                    jointParameters2 JointParameters {
+                      position 0.09953861808616556
+                    }
+                    device [
+                      RotationalMotor {
+                        name "link2"
+                      }
+                    ]
+                    device2 [
+                      RotationalMotor {
+                        name "link22"
+                      }
+                    ]
+                    endPoint Solid {
+                      translation -0.008195983059673237 0.09154757827413613 0.0009976201736121293
+                      rotation 0.10367599762960755 -0.004184446182806312 0.9946023214962093 0.10007842482653721
+                      children [
+                        Solid {
+                          translation 0 0.09 0
+                          children [
+                            DistanceSensor {
+                              translation -0.05 1.3268e-07 0
+                              rotation 0 0 1 3.14159
+                              children [
+                                USE sensor
+                              ]
+                              name "body2RightSensor"
+                            }
+                            DistanceSensor {
+                              translation 0.05 0 0
+                              children [
+                                USE sensor
+                              ]
+                              name "body2LeftSensor"
+                              boundingObject USE sensor
+                              physics Physics {
+                              }
+                            }
+                            Hinge2Joint {
+                              jointParameters HingeJointParameters {
+                                position 0.01232940695748852
+                              }
+                              jointParameters2 JointParameters {
+                                position 0.47394953862356254
+                              }
+                              device [
+                                RotationalMotor {
+                                  name "link3"
+                                }
+                              ]
+                              device2 [
+                                RotationalMotor {
+                                  name "link32"
+                                }
+                              ]
+                              endPoint Solid {
+                                translation -0.04107228420736577 0.08007258451519833 0.0009356338567689804
+                                rotation 0.025516314455585835 -0.006161176653328258 0.999655419431541 0.47410686114008066
+                                children [
+                                  Solid {
+                                    translation -5.56311e-06 0.089933 -0.000224234
+                                    rotation 0.9796230333337855 -3.3193498296006805e-05 -0.20084499361473931 0.0006829794860139766
+                                    children [
+                                      DistanceSensor {
+                                        translation -0.05 6.12305e-18 0
+                                        rotation 0 0 1 3.141592653589793
+                                        children [
+                                          USE sensor
+                                        ]
+                                        name "body3RightSensor"
+                                        boundingObject USE sensor
+                                        physics Physics {
+                                        }
+                                      }
+                                      DistanceSensor {
+                                        translation 0.05 0 0
+                                        children [
+                                          USE sensor
+                                        ]
+                                        name "body3LeftSensor"
+                                        boundingObject USE sensor
+                                        physics Physics {
+                                        }
+                                      }
+                                      Hinge2Joint {
+                                        jointParameters HingeJointParameters {
+                                          position 0.01043535784841292
+                                        }
+                                        jointParameters2 JointParameters {
+                                          position 0.09948324242085788
+                                        }
+                                        device [
+                                          RotationalMotor {
+                                            name "link4"
+                                          }
+                                        ]
+                                        device2 [
+                                          RotationalMotor {
+                                            name "link42"
+                                          }
+                                        ]
+                                        endPoint Solid {
+                                          translation -0.008084787344257584 0.08130716573813913 0.0005372296590578867
+                                          rotation 0.08414714037252162 -0.07084224552896433 0.9939319066291921 0.10005436907908262
+                                          children [
+                                            Solid {
+                                              translation 0 0.1 0
+                                              children [
+                                                DistanceSensor {
+                                                  translation -0.05 0 0
+                                                  rotation 0 0 1 3.14159
+                                                  children [
+                                                    USE sensor
+                                                  ]
+                                                  name "body4RightSensor"
+                                                  boundingObject USE sensor
+                                                  physics Physics {
+                                                  }
+                                                }
+                                                DistanceSensor {
+                                                  translation 0.05 0 0
+                                                  children [
+                                                    USE sensor
+                                                  ]
+                                                  name "body4LeftSensor"
+                                                  boundingObject USE sensor
+                                                  physics Physics {
+                                                  }
+                                                }
+                                                DEF tail Shape {
+                                                  appearance PBRAppearance {
+                                                    baseColor 0 1 0
+                                                    metalness 0
+                                                  }
+                                                  geometry Box {
+                                                    size 0.1 0.15 0.05
+                                                  }
+                                                }
+                                              ]
+                                              boundingObject USE tail
+                                              physics Physics {
+                                                centerOfMass [
+                                                  0 0 0
+                                                ]
+                                              }
+                                            }
+                                            DEF link Shape {
+                                              appearance PBRAppearance {
+                                                baseColor 0 0 0
+                                                metalness 0
+                                              }
+                                              geometry Sphere {
+                                                radius 0.028
+                                              }
+                                            }
+                                          ]
+                                          boundingObject USE link
+                                          physics Physics {
+                                          }
+                                          linearVelocity 0.1798390097253104 -0.5239543718615632 -0.021499710398348013
+                                          angularVelocity -1.0827511063409396 -0.031586320485796904 2.189024033275689
+                                        }
+                                      }
+                                      DEF body Shape {
+                                        appearance PBRAppearance {
+                                          baseColor 0 1 0
+                                          metalness 0
+                                        }
+                                        geometry Box {
+                                          size 0.1 0.15 0.05
+                                        }
+                                      }
+                                    ]
+                                    boundingObject USE body
+                                    physics Physics {
+                                    }
+                                  }
+                                  DEF link Shape {
+                                    appearance PBRAppearance {
+                                      baseColor 0 0 0
+                                    }
+                                    geometry Sphere {
+                                      radius 0.028
+                                    }
+                                  }
+                                ]
+                                boundingObject USE link
+                                physics Physics {
+                                }
+                                linearVelocity 0.02175046732735926 -0.17082029085139644 -0.09612902225320336
+                                angularVelocity -1.0842180088499345 0.03280444303457972 0.6774129372349462
+                              }
+                            }
+                            DEF body Shape {
+                              appearance PBRAppearance {
+                                baseColor 0 1 0
+                                metalness 0
+                              }
+                              geometry Box {
+                                size 0.1 0.15 0.05
+                              }
+                            }
+                          ]
+                          boundingObject USE body
+                          physics Physics {
+                          }
+                        }
+                        DEF link Shape {
+                          appearance PBRAppearance {
+                            baseColor 0 0 0
+                          }
+                          geometry Sphere {
+                            radius 0.028
+                          }
+                        }
+                      ]
+                      boundingObject USE link
+                      physics Physics {
+                      }
+                      linearVelocity -0.017906051986161502 -0.05045098173547737 -0.16336218285370074
+                      angularVelocity -1.098405802238914 -0.18687159527276725 0.8826383795079045
+                    }
+                  }
+                  DEF body Shape {
+                    appearance PBRAppearance {
+                      baseColor 0 1 0
+                      metalness 0
+                    }
+                    geometry Box {
+                      size 0.1 0.15 0.05
+                    }
+                  }
+                ]
+                name "solid(4)"
+                boundingObject USE body
+                physics Physics {
+                }
+              }
+              DEF link Shape {
+                appearance PBRAppearance {
+                  baseColor 0 0 0
+                }
+                geometry Sphere {
+                  radius 0.0275
+                }
+              }
+            ]
+            physics Physics {
+            }
+            linearVelocity -0.006852377535760619 0.05159390633561875 -0.08999639021326059
+            angularVelocity -1.1787340788163518 -0.12735559837788246 -0.6270435997676562
+          }
+        }
+        DEF head Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            metalness 0
+          }
+          geometry Box {
+            size 0.1 0.15 0.05
+          }
+        }
+      ]
+      name "solid(1)"
+      boundingObject USE head
+      physics Physics {
+      }
+    }
+  ]
+  boundingObject DEF head Shape {
+    appearance PBRAppearance {
+      baseColor 1 0 0
+      metalness 0
+    }
+    geometry Box {
+      size 0.1 0.2 0.05
+    }
+  }
+  physics Physics {
+  }
+  controller "first_controller"
+  linearVelocity -0.01263535671952047 0.043718988728366465 -0.06283643990628163
+  angularVelocity -1.1565987994675526 -0.3417353603808618 -0.0023749178783060766
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
